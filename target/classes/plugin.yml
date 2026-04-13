@@ -1,0 +1,22 @@
+name: FlexGames-Secrets
+version: 1.0.0
+main: cz.flexgames.secrets.FlexSecrets
+author: FlexGames
+description: "Secret heads hunt plugin by FlexGames"
+
+softdepend:
+  - PlaceholderAPI
+
+commands:
+  secret:
+    description: Main secrets command
+    usage: /secret [gui|give|place|remove|reset|reload]
+    aliases: [secrets, flexsecret]
+
+permissions:
+  flexsecrets.use:
+    description: Use the /secret command and find secrets
+    default: true
+  flexsecrets.admin:
+    description: Admin commands (give, place, remove, reset, reload)
+    default: op

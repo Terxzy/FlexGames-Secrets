@@ -1,0 +1,11 @@
+cz\flexgames\secrets\listener\SecretsListener.class
+cz\flexgames\secrets\util\HeadUtil.class
+cz\flexgames\secrets\command\SecretsCommand.class
+cz\flexgames\secrets\manager\MessageManager.class
+cz\flexgames\secrets\model\SecretHead.class
+cz\flexgames\secrets\util\NMSUtil.class
+cz\flexgames\secrets\manager\ConfigManager.class
+cz\flexgames\secrets\FlexSecrets.class
+cz\flexgames\secrets\manager\LocationManager.class
+cz\flexgames\secrets\gui\SecretsGUI.class
+cz\flexgames\secrets\manager\PlayerDataManager.class

@@ -1,0 +1,118 @@
+# ================================================
+#   FlexGames-Secrets  |  Messages
+# ================================================
+# Supports: & color codes
+# Placeholders: {player}, {found}, {total}, {remaining}, {head_name}, {percent}
+# Set any message to '' to disable it completely.
+# ================================================
+
+prefix: "&8[&6&l\u2726 FlexSecrets &8]"
+
+# ---- Discovery Messages (chat) ----
+found:
+  # Shown when finding the very first secret
+  first:
+    - ""
+    - "  {prefix} &f&lWOW! You found your very first secret!"
+    - "  &7 \u00bb &eHead: &f{head_name}"
+    - "  &7 \u00bb &eProgress: &f{found}&7/&f{total} &8(&a{percent}%&8)"
+    - ""
+
+  # Shown for every other find
+  normal:
+    - ""
+    - "  {prefix} &aSecret discovered!"
+    - "  &7 \u00bb &eHead: &f{head_name}"
+    - "  &7 \u00bb &eProgress: &f{found}&7/&f{total} &8(&a{percent}%&8)"
+    - "  &7 \u00bb &eRemaining: &c{remaining}"
+    - ""
+
+  # Already collected this secret
+  already-found: "{prefix} &cYou already found this secret! &8(&7{found}&8/&7{total}&8)"
+
+  # All secrets found - COMPLETE!
+  complete:
+    - ""
+    - "  &6&l\u2726 \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 \u2726"
+    - "  &e&l CONGRATULATIONS, {player}!"
+    - "  &6&l You found ALL {total} secrets!"
+    - "  &7 What a legendary achievement!"
+    - "  &6&l\u2726 \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 \u2726"
+    - ""
+
+  # Server-wide broadcast when someone completes all secrets
+  complete-broadcast: "&6&l[FlexSecrets] &e{player} &7has found &6&lALL &7secrets! &6\u2605 Legendary! \u2605"
+
+# ---- Title (shown on-screen) ----
+title:
+  find-title:    "&6&l\u2726 Secret Found! \u2726"
+  find-subtitle: "&e{head_name} &8\u00b7 &f{found}&7/&f{total}"
+
+  complete-title:    "&6&l\u2605 COMPLETED! \u2605"
+  complete-subtitle: "&7All &e{total} &7secrets discovered!"
+
+  # Timings in ticks (20 ticks = 1 second)
+  fade-in:  10
+  stay:     70
+  fade-out: 20
+
+# ---- Action Bar ----
+actionbar:
+  find:     "&6\u2726 &eSecret found! &8\u00b7 &fProgress: {found}&7/&f{total} &8\u00b7 &cRemaining: {remaining}"
+  complete: "&6\u2605 &eYou found &6ALL &e{total} secrets! &6\u2605"
+
+# ---- GUI ----
+gui:
+  title:    "&8&l\u2726 &6&lFlexSecrets &8&l\u2726"
+  rows:     6
+
+  your-progress: "&7Your progress: &e{found}&7/&6{total} &8(&a{percent}%&8)"
+
+  head-found-lore:
+    - ""
+    - "&a&l\u2714 Already discovered!"
+    - "&8Click to receive this head."
+
+  head-not-found-lore:
+    - ""
+    - "&c&l\u2718 Not yet found."
+    - "&8Explore the world to find it!"
+
+  info-name:  "&e&lYour Progress"
+  info-lore:
+    - "&7Found: &e{found} &7/ &6{total}"
+    - "&7Remaining: &c{remaining}"
+    - "&7Completion: &a{percent}%"
+    - ""
+    - "&8Keep exploring to find more secrets!"
+
+  close-name: "&c&lClose Menu"
+  close-lore:
+    - "&7Click to close."
+
+# ---- Admin / Command Messages ----
+cmd:
+  no-permission:     "{prefix} &cYou don't have permission!"
+  player-only:       "{prefix} &cOnly players can use this command!"
+  player-not-found:  "{prefix} &cPlayer &e{player} &cwas not found!"
+  head-not-found:    "{prefix} &cHead &e'{id}' &cwas not found in config!"
+  give-success:      "{prefix} &aYou received: &e{head_name}"
+  give-admin:        "{prefix} &aGave &e{head_name} &ato &6{player}&a."
+  reset-success:     "{prefix} &aProgress for &e{player} &ahas been reset."
+  place-success:     "{prefix} &aSecret &e'{id}' &aregistered at this location!"
+  remove-success:    "{prefix} &aSecret location removed successfully."
+  remove-not-found:  "{prefix} &cNo secret is registered at that location."
+  no-skull-nearby:   "{prefix} &cLook at a skull block within 5 blocks!"
+  reload-success:    "{prefix} &aConfiguration reloaded successfully!"
+
+  help:
+    - ""
+    - "&8&m          &r &6&l\u2726 FlexGames Secrets Help &6&l\u2726 &8&m          "
+    - "  &e/secret             &8- &7Open the secrets GUI"
+    - "  &e/secret give &6<id>  &8- &7Get a head item &8(Admin)"
+    - "  &e/secret place &6<id> &8- &7Register looked-at skull &8(Admin)"
+    - "  &e/secret remove       &8- &7Unregister skull &8(Admin)"
+    - "  &e/secret reset &6<player> &8- &7Reset progress &8(Admin)"
+    - "  &e/secret reload       &8- &7Reload config &8(Admin)"
+    - "&8&m                                                  "
+    - ""

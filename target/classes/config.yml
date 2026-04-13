@@ -1,0 +1,93 @@
+# ================================================
+#   FlexGames-Secrets  |  Configuration
+# ================================================
+
+# Total secrets on the server (shown in progress messages)
+total-secrets: 25
+
+# Settings for the particle effect on discovery
+particles:
+  enabled: true
+  type: HEART           # HEART, FIREWORKS_SPARK, CRIT_MAGIC, VILLAGER_HAPPY
+  count: 25
+  visible-radius: 20    # blocks around the head that see the particles
+
+# Sounds played on events
+sound:
+  enabled: true
+  on-find: LEVEL_UP     # Sound when a secret is found
+  on-find-volume: 1.0
+  on-find-pitch: 1.0
+  on-gui-open: ORB_PICKUP
+  on-gui-click: CLICK
+
+# Commands run for EVERY secret found (in addition to head-specific commands)
+# Placeholders: %player%, {player}
+global-rewards:
+  on-find: []
+  on-complete:
+    - "broadcast &6&l[FlexSecrets] &e%player% &7found &6ALL &7secrets! Amazing!"
+
+# ================================================
+#   Head Definitions
+# ================================================
+# skin:    Mojang username  (resolved online)
+# texture: Base64 texture   (from minecraft-heads.com "Value" field)
+# Both 'skin' and 'texture' are supported. 'texture' takes priority.
+# commands: run as console; %player% / {player} = finder's name
+# ================================================
+
+heads:
+  head1:
+    name: "&6&l\u2726 &eGolden Secret &6&l\u2726"
+    skin: "Notch"
+    lore:
+      - "&7The legend of Anduria begins here."
+      - "&7Find all secrets to claim glory!"
+      - ""
+      - "&6Reward: &e+10 coins"
+    commands:
+      - "give %player% gold_ingot 1"
+
+  head2:
+    name: "&b&l\u2726 &3Ocean Secret &b&l\u2726"
+    skin: "jeb_"
+    lore:
+      - "&7Whispers of the deep blue sea."
+      - ""
+      - "&6Reward: &e+15 coins"
+    commands:
+      - "give %player% prismarine_shard 3"
+
+  head3:
+    name: "&c&l\u2726 &4Nether Secret &c&l\u2726"
+    skin: "Dinnerbone"
+    lore:
+      - "&7Forged in the fires of the underworld."
+      - ""
+      - "&6Reward: &e+20 coins"
+    commands:
+      - "give %player% nether_brick 5"
+
+  head4:
+    name: "&a&l\u2726 &2Forest Secret &a&l\u2726"
+    skin: "Grumm"
+    lore:
+      - "&7Hidden among the ancient trees."
+      - ""
+      - "&6Reward: &e+25 coins"
+    commands:
+      - "give %player% sapling 4"
+
+  head5:
+    name: "&d&l\u2726 &5Mystic Secret &d&l\u2726"
+    # Base64 texture example - paste Value from minecraft-heads.com
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzMwYTY1YmI0ZTBmZjIwNzk4YTQxZDNjNWZlMjk5NDM0ODM4MmMwNDZiNTNkZjcwMmMxMTg4MTBjZDllMiJ9fX0="
+    lore:
+      - "&7Ancient magic flows through this head."
+      - ""
+      - "&6Reward: &e+30 coins"
+    commands:
+      - "give %player% ender_pearl 2"
+
+# Add more heads up to total-secrets here...
